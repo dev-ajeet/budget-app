@@ -1,0 +1,14 @@
+/**********************
+* Event Bubbling: Event Bubbling means when an event is fired or triggered on some DOM element, then the exact same event also triggered on all of the parents elements. So, the event is first fired on the button, but then it will also be fired on all the  parents elements one at a time, so it will also fire on the paragraph, the section, the main element and all the way up in the DOM tree until the HTML element which is the root.
+* So we say that event bubbles up inside the DOM tree, and that's why it is called Bubbling. 
+* Now the element on which the event was actually first fired, i.e the element that cause the event to happen, is called the target element. This target element is stored as a property in the event object. 
+* This means all the parents elements on which the event will also fire will know that target element of the event, .i.e where the event is first fired. That brings us to event delegation
+* If the event bubbles up in the DOM tree, and if we know where the event was fired then we can simply attach an event handler to a parent element and wait for the event to bubble up, and then we can do whatever we  intended to do with our target element. This technique is call Event Delegation. 
+* So again, event delegation is to not set up the event handler on the original element that we are interested in, but to attach it to a parent element and, basically, catch the event there because it bubbles up. 
+* Use Cases of Event Delegation:
+      1. When we have an element with lots of child elements that we are interested in, so instead of adding event handler to all of these child elements, we simply add it to the parent element, and then determine on which child element event is fired.
+      2. When we want an even handler attached to an element that is not yet in the DOM when our page loaded. 
+* In the application that we are coding it is both the cases. As we have lot of expense or income items that are not in the DOM when we load our page, so there is no way to attach an event handler to them, and also there may be a lot of items, so it wouldn't be useful to have one event handler attached to each one of them. That's why are going to use event delegation. 
+* event.target is the actual element inside the form that was clicked.
+* event.target – is the “target” element that initiated the event, it doesn’t change through the bubbling process.
+* this – is the “current” element, the one that has a currently running handler on it.
